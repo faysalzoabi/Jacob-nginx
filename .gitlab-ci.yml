@@ -56,6 +56,8 @@ deploy:
     - echo "create volumes and network for very first deployment"
     - docker network create jacob || true
     - docker volume create --name=frontend || true
+    - docker volume create --name=static-files || true
+    - docker volume create --name=media-files || true
 
     - echo "update/restart"
     - docker-compose -f docker-compose.deploy.yml pull
