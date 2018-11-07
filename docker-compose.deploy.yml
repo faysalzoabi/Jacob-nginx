@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-2018-09/personal-projects/jacob-project/frontend:master
+    restart: always
+    command: "sh /start.sh"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - frontend:/frontend
+      - "/etc/letsencrypt:/etc/letsencrypt:ro"
+      - "/etc/nginx/ssl/dhparam.pem:/etc/ssl/certs/dhparam.pem:ro"
+
+volumes:
+  frontend:
+    external: true
+
+networks:
+  default:
+    external:
+      name: jacob
