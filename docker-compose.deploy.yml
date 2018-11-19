@@ -1,20 +1,28 @@
 version: '3'
 services:
   nginx:
-    image: registry.gitlab.propulsion-home.ch/full-stack/batch-2018-09/personal-projects/jacob-project/frontend:master
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-2018-09/personal-projects/jacob-project/nginx:latest
     restart: always
+    env_file:
+      - ./nginx.env
     command: "sh /start.sh"
     ports:
       - "80:80"
       - "443:443"
     volumes:
 #      - frontend:/frontend
-#      - "/etc/letsencrypt:/etc/letsencrypt:ro"
-#      - "/etc/nginx/ssl/dhparam.pem:/etc/ssl/certs/dhparam.pem:ro"
+      - media-files:/media-files
+      - static-files:/static-files
+#      - /etc/letsencrypt:/etc/letsencrypt
+#      - /etc/nginx/ssl/:/etc/ssl/certs/
 
-#volumes:
+volumes:
 #  frontend:
 #    external: true
+  media-files:
+    external: true
+  static-files:
+    external: true
 
 networks:
   default:
