@@ -9,8 +9,8 @@ services:
       - "443:443"
     volumes:
       - frontend:/frontend
-      - "/etc/letsencrypt:/etc/letsencrypt:ro"
-      - "/etc/nginx/ssl/dhparam.pem:/etc/ssl/certs/dhparam.pem:ro"
+#      - "/etc/letsencrypt:/etc/letsencrypt:ro"
+#      - "/etc/nginx/ssl/dhparam.pem:/etc/ssl/certs/dhparam.pem:ro"
 
 volumes:
   frontend:
