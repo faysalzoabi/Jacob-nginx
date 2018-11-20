@@ -10,16 +10,15 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-#      - frontend:/frontend
+      - frontend:/frontend
       - media-files:/media-files
       - static-files:/static-files
       - ./config:/etc/nginx/conf.d
       - /etc/letsencrypt:/etc/letsencrypt
-#      - /etc/nginx/ssl/:/etc/ssl/certs/
 
 volumes:
-#  frontend:
-#    external: true
+  frontend:
+    external: true
   media-files:
     external: true
   static-files:
