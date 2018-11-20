@@ -14,7 +14,7 @@ services:
       - media-files:/media-files
       - static-files:/static-files
       - ./config:/etc/nginx/conf.d
-#      - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 #      - /etc/nginx/ssl/:/etc/ssl/certs/
 
 volumes:
