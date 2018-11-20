@@ -13,7 +13,7 @@ ENV PATH /opt/miniconda/bin:$PATH
 RUN pip install jinja2==2.9.4
 
 COPY ./htpasswd /
-COPY ./template.conf /templates/
+COPY config/default.conf /templates/
 COPY ./render_template.py /templates/
 COPY ./start.sh /
 RUN chmod +x start.sh

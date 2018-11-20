@@ -1,0 +1,25 @@
+version: '3'
+services:
+  nginx:
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-2018-09/personal-projects/jacob-project/nginx:latest
+    restart: always
+    command: "sh /start.sh"
+    ports:
+      - "9000:80"
+      - "443:443"
+    volumes:
+#      - frontend:/frontend
+      - media-files:/media-files
+      - static-files:/static-files
+      - ./config:/etc/nginx/conf.d
+
+volumes:
+  frontend:
+  media-files:
+  static-files:
+
+
+networks:
+  default:
+    external:
+      name: jacob
