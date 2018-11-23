@@ -11,6 +11,7 @@ services:
       - "443:443"
     volumes:
       - frontend:/frontend
+      - pdfs:/pdfs
       - media-files:/media-files
       - static-files:/static-files
       - ./config:/etc/nginx/conf.d
@@ -18,6 +19,8 @@ services:
 
 volumes:
   frontend:
+    external: true
+  pdfs:
     external: true
   media-files:
     external: true
