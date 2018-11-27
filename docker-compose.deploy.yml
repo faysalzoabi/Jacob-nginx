@@ -12,6 +12,7 @@ services:
     volumes:
       - frontend:/frontend
       - pdfs:/pdfs
+      - htmls:/htmls
       - media-files:/media-files
       - static-files:/static-files
       - ./config:/etc/nginx/conf.d
