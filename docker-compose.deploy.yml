@@ -22,6 +22,8 @@ volumes:
     external: true
   pdfs:
     external: true
+  htmls:
+    external: true
   media-files:
     external: true
   static-files:
