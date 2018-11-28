@@ -8,7 +8,6 @@ services:
       - "9000:80"
       - "443:443"
     volumes:
-#      - frontend:/frontend
       - media-files:/media-files
       - static-files:/static-files
       - ./config:/etc/nginx/conf.d
@@ -17,9 +16,3 @@ volumes:
   frontend:
   media-files:
   static-files:
-
-
-networks:
-  default:
-    external:
-      name: jacob
